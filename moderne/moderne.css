@@ -85,3 +85,29 @@ input,select,textarea{width:100%;font:inherit;font-size:16px;padding:12px 14px;b
 .switch-version i{width:10px;height:10px;border-radius:50%;background:var(--brique);animation:en-pulse 1.8s infinite}
 @keyframes en-pulse{0%{box-shadow:0 0 0 0 rgba(156,59,34,.7)}70%{box-shadow:0 0 0 10px rgba(156,59,34,0)}100%{box-shadow:0 0 0 0 rgba(156,59,34,0)}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+/* Refonte : photos */
+.atelier{background:radial-gradient(90% 70% at 70% 50%,#7A2C18 0%,var(--bordeaux) 60%,var(--bordeaux-2) 100%)}
+.legende{margin-top:12px;font-size:.82rem;color:var(--doux)}
+.examen{background:var(--bordeaux-2);padding:96px 0}
+.examen .grille{display:grid;grid-template-columns:1.3fr .7fr;gap:48px;align-items:center}
+.vue-photo{position:relative;aspect-ratio:16/10;overflow:hidden;background:#3A1A0E}
+.vue-photo img{width:100%;height:100%;object-fit:cover;transition:filter .6s ease}
+.vue-photo .faisceau{position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .6s}
+.mode-rasante img{filter:grayscale(1) contrast(1.9) brightness(.85)}
+.mode-rasante .faisceau{opacity:1;background:linear-gradient(100deg,rgba(255,240,200,.35) 0%,transparent 45%,rgba(0,0,0,.55) 100%)}
+.mode-uv img{filter:grayscale(1) brightness(.6) contrast(1.6) sepia(1) hue-rotate(205deg) saturate(3.2)}
+.mode-uv .faisceau{opacity:1;background:radial-gradient(circle at 50% 50%,rgba(120,80,255,.15),rgba(20,0,60,.55))}
+.modes{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0 16px}
+.modes button{font:inherit;font-weight:600;font-size:.9rem;padding:10px 16px;border-radius:999px;border:1.5px solid rgba(212,202,135,.5);background:transparent;color:var(--texte);cursor:pointer;min-height:44px}
+.modes button[aria-pressed=true]{background:var(--sable);border-color:var(--sable);color:var(--bordeaux)}
+.explication{min-height:7em;color:var(--doux)}
+.explication b{color:#fff;font-family:"Marcellus",serif;font-weight:400;font-size:1.3rem;display:block;margin-bottom:4px}
+@media(max-width:860px){.examen .grille{grid-template-columns:1fr;gap:20px}}
+.bande-photos{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;background:var(--bordeaux-2)}
+.bande-photos figure{margin:0;position:relative;aspect-ratio:3/4;overflow:hidden;background:#5A2A1A}
+.bande-photos img{width:100%;height:100%;object-fit:cover;filter:saturate(.9)}
+.bande-photos figcaption{position:absolute;left:0;right:0;bottom:0;padding:60px 20px 20px;background:linear-gradient(transparent,rgba(46,15,6,.92));font-family:"Marcellus",serif;font-size:1.5rem;color:#fff}
+.bande-photos figcaption small{display:block;font-family:"Hanken Grotesk",sans-serif;font-size:.85rem;color:var(--doux)}
+@media(max-width:760px){.bande-photos{grid-template-columns:1fr}.bande-photos figure{aspect-ratio:4/3}}
+.credits{font-size:.78rem;color:var(--doux);opacity:.8}

@@ -11,38 +11,49 @@
 <body>
 <header class="m-head"><div class="wrap">
   <a class="marque" href="index.html"><svg class="logo-svg" viewBox="0 0 168 150" role="img" aria-label="ENSCRBC"><rect x="0" y="0" width="16" height="150" fill="#D4CA87"/><rect x="0" y="0" width="168" height="10" fill="#D4CA87"/><rect x="16" y="20" width="152" height="52" fill="#9C3B22"/><circle cx="58" cy="108" r="40" fill="#9C3B22"/><circle cx="124" cy="108" r="40" fill="#9C3B22"/><text x="92" y="63" text-anchor="middle" fill="#fff" style="font-family:Marcellus,Georgia,serif;font-size:50px;letter-spacing:4px">ENSC</text><text x="92" y="127" text-anchor="middle" fill="#fff" style="font-family:Marcellus,Georgia,serif;font-size:52px">R<tspan style="font-size:34px">B</tspan>C</text></svg><span>ENSCRBC</span></a>
-  <nav aria-label="Navigation"><a href="#matieres">Spécialités</a><a href="#histoire">L'école</a><a href="#acces">Admission</a><a href="#contact">Contact</a></nav>
+  <nav aria-label="Navigation"><a href="#examen">L'examen</a><a href="#histoire">L'école</a><a href="#acces">Admission</a><a href="#contact">Contact</a></nav>
 </div></header>
 <main>
 <section class="atelier">
   <div>
     <p class="ar" lang="ar">المدرسة الوطنية العليا لحفظ الممتلكات الثقافية وترميمها</p>
     <h1>Restaurez l'œuvre.</h1>
-    <p class="intro">Ce zellige est couvert de siècles de poussière. Passez le doigt ou la souris dessus pour le nettoyer, comme le font les élèves de l'École nationale supérieure de conservation et de restauration des biens culturels.</p>
+    <p class="intro">Cette mosaïque du musée de Tipasa est couverte de siècles de poussière. Passez le doigt ou la souris dessus pour la nettoyer, comme le font les étudiants de l'École nationale supérieure de conservation et de restauration des biens culturels.</p>
     <div class="outils">
       <div class="jauge"><small id="pct">Surface restaurée : 0 %</small><div class="barre"><i id="barre"></i></div></div>
       <button class="btn" id="recommencer" type="button">Recommencer</button>
     </div>
     <div class="bravo" id="bravo" role="status"><p><b>Œuvre restaurée.</b> Derrière ce geste, il y a la chimie des matériaux, l'histoire de l'art et des années de pratique en atelier.</p></div>
   </div>
-  <div class="cadre"><div class="toile"><canvas id="oeuvre" aria-hidden="true"></canvas><canvas id="salete" aria-label="Zone de nettoyage de l'œuvre"></canvas></div></div>
+  <div><div class="cadre"><div class="toile"><canvas id="oeuvre" aria-hidden="true" data-src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Mosaic_of_Captives_%28Tipaza%29.jpg/1280px-Mosaic_of_Captives_%28Tipaza%29.jpg"></canvas><canvas id="salete" aria-label="Zone de nettoyage de l'œuvre"></canvas></div></div><p class="legende">Mosaïque des captifs, musée archéologique de Tipasa. Photo Wikimedia Commons.</p></div>
 </section>
 
-<section class="matieres" id="matieres"><div class="wrap">
-  <h2>Trois matières, trois ateliers</h2>
-  <div style="margin-top:30px">
-    <div class="mat"><div class="pict"><svg viewBox="0 0 320 200" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><linearGradient id="gp" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#9C3B22"/><stop offset="1" stop-color="#6A2614"/></linearGradient></defs><rect width="320" height="200" fill="url(#gp)"/><rect x="95" y="34" width="130" height="104" fill="#D4CA87"/><rect x="105" y="44" width="110" height="84" fill="#EEE9C8"/><path d="M105 128l34-40 22 24 18-16 36 32z" fill="#9C3B22" opacity=".7"/><circle cx="190" cy="66" r="10" fill="#9C3B22" opacity=".5"/><path d="M120 138l-22 52M200 138l22 52M160 138v52" stroke="#D4CA87" stroke-width="5"/></svg></div><span class="mot">Peinture de chevalet</span><p>Toiles, couches picturales, vernis et supports.</p></div>
-    <div class="mat"><div class="pict"><svg viewBox="0 0 320 200" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><linearGradient id="gq" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#B5502F"/><stop offset="1" stop-color="#7C2E18"/></linearGradient></defs><rect width="320" height="200" fill="url(#gq)"/><path d="M90 40h140v124H90z" fill="#EEE9C8"/><path d="M230 40c12 0 12 20 0 20M90 164c-12 0-12-20 0-20" fill="#D4CA87"/><g stroke="#6A2614" stroke-width="3" stroke-linecap="round" opacity=".75"><path d="M110 70c20-8 40 8 60 0s40 8 44 0"/><path d="M110 92h100M110 108h86M110 124h96M110 140h70"/></g></svg></div><span class="mot">Papier et manuscrits</span><p>Dessins, estampes, gravures, livres et manuscrits.</p></div>
-    <div class="mat"><div class="pict"><svg viewBox="0 0 320 200" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><linearGradient id="gc" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6A2614"/><stop offset="1" stop-color="#9C3B22"/></linearGradient></defs><rect width="320" height="200" fill="url(#gc)"/><path d="M140 34h40v14c26 14 38 40 34 70-4 28-22 46-54 46s-50-18-54-46c-4-30 8-56 34-70z" fill="#D4CA87"/><path d="M118 96h84M114 116h92" stroke="#9C3B22" stroke-width="5"/><path d="M168 60l-10 30 14 20-8 30" stroke="#6A2614" stroke-width="2" fill="none"/></svg></div><span class="mot">Céramique et fouilles</span><p>Faïences, porcelaines, terres cuites et objets archéologiques.</p></div>
+<section class="examen" id="examen"><div class="wrap grille">
+  <div class="vue-photo" id="vue"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Sarcophagus_of_Pelops_and_Hippodamia_%28Tipaza%29.jpg/1280px-Sarcophagus_of_Pelops_and_Hippodamia_%28Tipaza%29.jpg" alt="Sarcophage de Pélops et Hippodamie, Tipasa" loading="lazy"><span class="faisceau"></span></div>
+  <div>
+    <h2>Regarder comme un restaurateur</h2>
+    <p style="color:var(--doux)">Avant de toucher une œuvre, on l'examine sous plusieurs lumières. Changez d'éclairage.</p>
+    <div class="modes" role="group" aria-label="Éclairage">
+      <button type="button" data-mode="" aria-pressed="true">Lumière du jour</button>
+      <button type="button" data-mode="mode-rasante" aria-pressed="false">Lumière rasante</button>
+      <button type="button" data-mode="mode-uv" aria-pressed="false">Ultraviolets</button>
+    </div>
+    <p class="explication" id="explication" aria-live="polite"></p>
+    <p class="credits">Sarcophage de Pélops et Hippodamie, Tipasa. Effets d'éclairage simulés pour la démonstration.</p>
   </div>
-  <p class="verif">Intitulés des spécialités à valider par l'administration de l'ENSCRBC</p>
 </div></section>
+
+<section class="bande-photos" id="matieres" aria-label="Domaines">
+  <figure><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Mosaic_Pax_and_Concordia_%28Tipaza%29.jpg/1280px-Mosaic_Pax_and_Concordia_%28Tipaza%29.jpg" alt="Mosaïque Pax et Concordia" loading="lazy"><figcaption>La mosaïque<small>Tesselles, mortiers, dépose et repose</small></figcaption></figure>
+  <figure><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Tipaza_ruins_crispinus_arch.jpg/1280px-Tipaza_ruins_crispinus_arch.jpg" alt="Arc de la basilique de Tipasa" loading="lazy"><figcaption>Le monument<small>Pierre, maçonneries, vestiges en place</small></figcaption></figure>
+  <figure><img src="https://upload.wikimedia.org/wikipedia/commons/4/49/Tipaza_mosaic.jpg" alt="Mosaïque du musée de Tipasa" loading="lazy"><figcaption>L'objet de musée<small>Céramique, peinture, papier, objets de fouille</small></figcaption></figure>
+</section>
 
 <section class="histoire" id="histoire"><div class="wrap">
   <h2>Fondée sur la science, dédiée à la mémoire, engagée pour l'avenir.</h2>
   <div class="fresque">
     <div><b>2008</b><p>Création de l'école, décret exécutif n° 08-328 du 21 octobre 2008.</p></div>
-    <div><b>2013</b><p>Réorganisation, décret n° 13-219 du 21 juin 2013.</p></div>
+    <div><b>2013</b><p>Réorganisation, décret exécutif n° 13-219 du 18 juin 2013.</p></div>
     <div><b>2021</b><p>École nationale supérieure, décret exécutif n° 21-49 du 21 janvier 2021.</p></div>
   </div>
 </div></section>
@@ -60,7 +71,7 @@
 <section class="contact" id="contact"><div class="wrap deux">
   <div><h2>Écrire à l'école</h2>
     <ul class="coords">
-      <li><small>Adresse (à vérifier)</small>Route nationale n° 11, Tipaza</li>
+      <li><small>Adresse (à vérifier)</small>Route nationale n° 11, Tipasa</li>
       <li><small>Téléphone</small><a href="tel:+21324376122">+213 24 37 61 22</a></li>
       <li><small>E-mail</small><a href="mailto:contact@encrbc.dz">contact@encrbc.dz</a></li>
     </ul>
@@ -75,7 +86,7 @@
 </div></section>
 </main>
 <iframe class="carte" title="Carte : ENSCRBC, Tipaza" loading="lazy" src="https://www.google.com/maps?q=Ecole+Nationale+Sup%C3%A9rieure+de+Conservation+et+de+Restauration+des+Biens+Culturels+Tipaza&z=14&output=embed"></iframe>
-<footer class="m-pied"><div class="wrap">© École nationale supérieure de conservation et de restauration des biens culturels · Ministère de la Culture et des Arts</div></footer>
+<footer class="m-pied"><div class="wrap">© École nationale supérieure de conservation et de restauration des biens culturels · Ministère de la Culture et des Arts<br><span class="credits">Photos d'illustration : site et musée archéologiques de Tipasa, Wikimedia Commons (CC BY-SA). À remplacer par les photos de l'école.</span></div></footer>
 <a class="switch-version" href="../index.html"><i></i>Découvrir la version institutionnelle</a>
 <div class="demo-bar"><b>Maquette de démonstration réalisée par Webminds</b> · aucun formulaire n'est enregistré</div>
 <script src="../js/main.js"></script>

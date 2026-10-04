@@ -5,6 +5,13 @@
   var pct=document.getElementById('pct'),barre=document.getElementById('barre'),bravo=document.getElementById('bravo');
   var C={vert:'#2F5D50',brique:'#9C3B22',sable:'#D4CA87',creme:'#F3EDD3',bleu:'#24506B',noir:'#3A1A0E'};
   function etoile(c,x,y,r,f,st){c.beginPath();for(var i=0;i<16;i++){var ang=Math.PI/8*i-Math.PI/2,rr=i%2?r*.62:r;c.lineTo(x+Math.cos(ang)*rr,y+Math.sin(ang)*rr);}c.closePath();c.fillStyle=f;c.fill();if(st){c.strokeStyle=st;c.lineWidth=r*.07;c.stroke();}}
+  var photo=null,src=A.getAttribute('data-src');
+  if(src){var im=new Image();im.onload=function(){photo=im;dessinerOeuvre();};im.src=src;}
+  function dessinerOeuvre(){
+    if(!N)return;
+    if(photo){var r=Math.max(N/photo.width,N/photo.height),w=photo.width*r,h=photo.height*r;a.drawImage(photo,(N-w)/2,(N-h)/2,w,h);}
+    else zellige();
+  }
   function zellige(){
     a.fillStyle=C.creme;a.fillRect(0,0,N,N);
     var n=4,t=N/n;
@@ -29,7 +36,7 @@
   }
   function taille(){
     var r=S.getBoundingClientRect(),d=Math.min(window.devicePixelRatio||1,2);N=Math.round(r.width*d);
-    A.width=S.width=A.height=S.height=N;zellige();crasse();fini=false;maj(0);bravo.classList.remove('on');
+    A.width=S.width=A.height=S.height=N;dessinerOeuvre();crasse();fini=false;maj(0);bravo.classList.remove('on');
   }
   function pos(e){var r=S.getBoundingClientRect();return{x:(e.clientX-r.left)/r.width*N,y:(e.clientY-r.top)/r.height*N};}
   function frotter(p){
@@ -51,4 +58,15 @@
   document.getElementById('recommencer').addEventListener('click',taille);
   var rt;addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(function(){var r=S.getBoundingClientRect();if(Math.abs(r.width*Math.min(devicePixelRatio||1,2)-N)>20)taille();},250);});
   if(document.fonts&&document.fonts.ready){document.fonts.ready.then(taille)}else taille();
+})();
+
+(function(){
+  var vue=document.getElementById('vue'),ex=document.getElementById('explication');if(!vue)return;
+  var T={'':['Lumière du jour','On observe l\'état général : couleurs, lacunes, dépôts visibles à l\'œil nu.'],
+    'mode-rasante':['Lumière rasante','Une lampe placée de côté fait ressortir le relief : fissures, soulèvements, traces d\'outils.'],
+    'mode-uv':['Ultraviolets','Sous UV, les matériaux ajoutés lors d\'anciennes restaurations n\'ont pas la même fluorescence que l\'original.']};
+  function choisir(m){vue.className='vue-photo'+(m?' '+m:'');ex.innerHTML='<b>'+T[m][0]+'</b>'+T[m][1];
+    document.querySelectorAll('.modes button').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.mode===m?'true':'false')});}
+  document.querySelectorAll('.modes button').forEach(function(b){b.addEventListener('click',function(){choisir(b.dataset.mode)})});
+  choisir('');
 })();
